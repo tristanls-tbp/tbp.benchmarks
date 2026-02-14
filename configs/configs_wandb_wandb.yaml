@@ -451,6 +451,72 @@ experiments:
       - runtime
       - episode_runtime
 
+  - name: "randrot_noise_sim_on_scan_monty_world"
+    files:
+      baseline: wandb_base
+      proposed: wandb_prop
+    metrics:
+      - percent_correct
+      - used_mlh
+      - match_steps
+      - runtime
+      - episode_runtime
+
+  - name: "world_image_on_scanned_model"
+    files:
+      baseline: wandb_base
+      proposed: wandb_prop
+    metrics:
+      - percent_correct
+      - used_mlh
+      - match_steps
+      - runtime
+      - episode_runtime
+
+  - name: "dark_world_image_on_scanned_model"
+    files:
+      baseline: wandb_base
+      proposed: wandb_prop
+    metrics:
+      - percent_correct
+      - used_mlh
+      - match_steps
+      - runtime
+      - episode_runtime
+
+  - name: "bright_world_image_on_scanned_model"
+    files:
+      baseline: wandb_base
+      proposed: wandb_prop
+    metrics:
+      - percent_correct
+      - used_mlh
+      - match_steps
+      - runtime
+      - episode_runtime
+
+  - name: "hand_intrusion_world_image_on_scanned_model"
+    files:
+      baseline: wandb_base
+      proposed: wandb_prop
+    metrics:
+      - percent_correct
+      - used_mlh
+      - match_steps
+      - runtime
+      - episode_runtime
+
+  - name: "multi_object_world_image_on_scanned_model"
+    files:
+      baseline: wandb_base
+      proposed: wandb_prop
+    metrics:
+      - percent_correct
+      - used_mlh
+      - match_steps
+      - runtime
+      - episode_runtime
+
   - name: "infer_comp_lvl1_with_monolithic_models"
     files:
       baseline: wandb_base
