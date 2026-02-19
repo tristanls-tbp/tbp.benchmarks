@@ -148,35 +148,14 @@ metrics:
     tolerance: 0.05
     columns:
       baseline:
-        column: "overall/run_time"
+        column: "Runtime"
         transforms:
           - kind: to_number
           - kind: sec_to_min
           - kind: round
             decimals: 0
       proposed:
-        column: "overall/run_time"
-        transforms:
-          - kind: to_number
-          - kind: sec_to_min
-          - kind: round
-            decimals: 0
-
-  runtime_parallel:
-    output_name: runtime
-    units: "min"
-    higher_is_better: false
-    tolerance: 0.05
-    columns:
-      baseline:
-        column: "overall/parallel_run_time"
-        transforms:
-          - kind: to_number
-          - kind: sec_to_min
-          - kind: round
-            decimals: 0
-      proposed:
-        column: "overall/parallel_run_time"
+        column: "Runtime"
         transforms:
           - kind: to_number
           - kind: sec_to_min
@@ -236,7 +215,7 @@ experiments:
       - used_mlh
       - match_steps
       - rotation_error
-      - runtime_parallel
+      - runtime
       - episode_runtime
 
   - name: "base_config_10distinctobj_surf_agent"
@@ -248,7 +227,7 @@ experiments:
       - used_mlh
       - match_steps
       - rotation_error
-      - runtime_parallel
+      - runtime
       - episode_runtime
 
   - name: "randrot_noise_10distinctobj_dist_agent"
@@ -260,7 +239,7 @@ experiments:
       - used_mlh
       - match_steps
       - rotation_error
-      - runtime_parallel
+      - runtime
       - episode_runtime
 
   - name: "randrot_noise_10distinctobj_dist_on_distm"
@@ -272,7 +251,7 @@ experiments:
       - used_mlh
       - match_steps
       - rotation_error
-      - runtime_parallel
+      - runtime
       - episode_runtime
 
   - name: "randrot_noise_10distinctobj_surf_agent"
@@ -284,7 +263,7 @@ experiments:
       - used_mlh
       - match_steps
       - rotation_error
-      - runtime_parallel
+      - runtime
       - episode_runtime
 
   - name: "randrot_10distinctobj_surf_agent"
@@ -296,7 +275,7 @@ experiments:
       - used_mlh
       - match_steps
       - rotation_error
-      - runtime_parallel
+      - runtime
       - episode_runtime
 
   - name: "randrot_noise_10distinctobj_5lms_dist_agent"
@@ -308,7 +287,7 @@ experiments:
       - used_mlh
       - match_steps
       - rotation_error
-      - runtime_parallel
+      - runtime
       - episode_runtime
 
   - name: "base_10simobj_surf_agent"
@@ -320,7 +299,7 @@ experiments:
       - used_mlh
       - match_steps
       - rotation_error
-      - runtime_parallel
+      - runtime
       - episode_runtime
 
   - name: "randrot_noise_10simobj_dist_agent"
@@ -332,7 +311,7 @@ experiments:
       - used_mlh
       - match_steps
       - rotation_error
-      - runtime_parallel
+      - runtime
       - episode_runtime
 
   - name: "randrot_noise_10simobj_surf_agent"
@@ -344,7 +323,7 @@ experiments:
       - used_mlh
       - match_steps
       - rotation_error
-      - runtime_parallel
+      - runtime
       - episode_runtime
 
   - name: "randomrot_rawnoise_10distinctobj_surf_agent"
@@ -356,7 +335,7 @@ experiments:
       - used_mlh
       - match_steps
       - rotation_error
-      - runtime_parallel
+      - runtime
       - episode_runtime
 
   - name: "base_10multi_distinctobj_dist_agent"
@@ -380,7 +359,7 @@ experiments:
       - used_mlh
       - match_steps
       - rotation_error
-      - runtime_parallel
+      - runtime
       - episode_runtime
 
   - name: "base_77obj_surf_agent"
@@ -392,7 +371,7 @@ experiments:
       - used_mlh
       - match_steps
       - rotation_error
-      - runtime_parallel
+      - runtime
       - episode_runtime
 
   - name: "randrot_noise_77obj_dist_agent"
@@ -404,7 +383,7 @@ experiments:
       - used_mlh
       - match_steps
       - rotation_error
-      - runtime_parallel
+      - runtime
       - episode_runtime
 
   - name: "randrot_noise_77obj_surf_agent"
@@ -416,7 +395,7 @@ experiments:
       - used_mlh
       - match_steps
       - rotation_error
-      - runtime_parallel
+      - runtime
       - episode_runtime
 
   - name: "randrot_noise_77obj_5lms_dist_agent"
@@ -428,7 +407,7 @@ experiments:
       - used_mlh
       - match_steps
       - rotation_error
-      - runtime_parallel
+      - runtime
       - episode_runtime
 
   - name: "unsupervised_inference_distinctobj_dist_agent"
@@ -527,7 +506,7 @@ experiments:
       - match_steps
       - rotation_error
       - prediction_error
-      - runtime_parallel
+      - runtime
 
   - name: "infer_comp_lvl1_with_comp_models"
     files:
@@ -539,7 +518,7 @@ experiments:
       - match_steps
       - rotation_error
       - prediction_error
-      - runtime_parallel
+      - runtime
 
   - name: "infer_comp_lvl2_with_comp_models"
     files:
@@ -551,7 +530,7 @@ experiments:
       - match_steps
       - rotation_error
       - prediction_error
-      - runtime_parallel
+      - runtime
 
   - name: "infer_comp_lvl3_with_comp_models"
     files:
@@ -563,7 +542,7 @@ experiments:
       - match_steps
       - rotation_error
       - prediction_error
-      - runtime_parallel
+      - runtime
 
   - name: "infer_comp_lvl4_with_comp_models"
     files:
@@ -575,7 +554,7 @@ experiments:
       - match_steps
       - rotation_error
       - prediction_error
-      - runtime_parallel
+      - runtime
 
   - name: "infer_comp_lvl1_with_comp_models_and_resampling"
     files:
@@ -587,7 +566,7 @@ experiments:
       - match_steps
       - rotation_error
       - prediction_error
-      - runtime_parallel
+      - runtime
 
 # ---------------------------------------------------------------------------
 # Output options

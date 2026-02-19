@@ -148,7 +148,7 @@ experiments:
       - used_mlh
       - match_steps
       - rotation_error
-      - runtime_parallel
+      - runtime
       - episode_runtime
 ```
 
