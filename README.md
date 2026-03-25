@@ -91,6 +91,7 @@ overall/avg_num_monty_matching_steps
 overall/percent_used_mlh_after_timeout
 overall/avg_episode_run_time
 overall/avg_prediction_error
+overall/num_episodes
 ```
 
 Examples:

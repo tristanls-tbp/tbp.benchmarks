@@ -254,6 +254,25 @@ metrics:
           - kind: round
             decimals: 2
 
+
+  num_episodes:
+    output_name: num_episodes
+    higher_is_better: true
+    tolerance: 0
+    columns:
+      baseline:
+        column: "Num Episodes|hidden"
+        transforms:
+          - kind: to_number
+          - kind: round
+            decimals: 0
+      proposed:
+        column: "Num Episodes|hidden"
+        transforms:
+          - kind: to_number
+          - kind: round
+            decimals: 0
+
 # ---------------------------------------------------------------------------
 # Experiments
 # Each experiment uses its `name` as the row key in BOTH files.
@@ -271,6 +290,7 @@ experiments:
       - rotation_error
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "base_config_10distinctobj_surf_agent"
     files:
@@ -283,6 +303,7 @@ experiments:
       - rotation_error
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "randrot_noise_10distinctobj_dist_agent"
     files:
@@ -295,6 +316,7 @@ experiments:
       - rotation_error
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "randrot_noise_10distinctobj_dist_on_distm"
     files:
@@ -307,6 +329,7 @@ experiments:
       - rotation_error
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "randrot_noise_10distinctobj_surf_agent"
     files:
@@ -319,6 +342,7 @@ experiments:
       - rotation_error
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "randrot_10distinctobj_surf_agent"
     files:
@@ -331,6 +355,7 @@ experiments:
       - rotation_error
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "randrot_noise_10distinctobj_5lms_dist_agent"
     files:
@@ -343,6 +368,7 @@ experiments:
       - rotation_error
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "base_10simobj_surf_agent"
     files:
@@ -355,6 +381,7 @@ experiments:
       - rotation_error
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "randrot_noise_10simobj_dist_agent"
     files:
@@ -367,6 +394,7 @@ experiments:
       - rotation_error
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "randrot_noise_10simobj_surf_agent"
     files:
@@ -379,6 +407,7 @@ experiments:
       - rotation_error
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "randomrot_rawnoise_10distinctobj_surf_agent"
     files:
@@ -391,6 +420,7 @@ experiments:
       - rotation_error
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "base_10multi_distinctobj_dist_agent"
     files:
@@ -403,6 +433,7 @@ experiments:
       - rotation_error
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "base_77obj_dist_agent"
     files:
@@ -415,6 +446,7 @@ experiments:
       - rotation_error
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "base_77obj_surf_agent"
     files:
@@ -427,6 +459,7 @@ experiments:
       - rotation_error
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "randrot_noise_77obj_dist_agent"
     files:
@@ -439,6 +472,7 @@ experiments:
       - rotation_error
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "randrot_noise_77obj_surf_agent"
     files:
@@ -451,6 +485,7 @@ experiments:
       - rotation_error
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "randrot_noise_77obj_5lms_dist_agent"
     files:
@@ -463,6 +498,7 @@ experiments:
       - rotation_error
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "unsupervised_inference_distinctobj_dist_agent"
     files:
@@ -473,6 +509,7 @@ experiments:
       - match_steps
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "unsupervised_inference_distinctobj_surf_agent"
     files:
@@ -483,6 +520,7 @@ experiments:
       - match_steps
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "randrot_noise_sim_on_scan_monty_world"
     files:
@@ -494,6 +532,7 @@ experiments:
       - match_steps
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "world_image_on_scanned_model"
     files:
@@ -505,6 +544,7 @@ experiments:
       - match_steps
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "dark_world_image_on_scanned_model"
     files:
@@ -516,6 +556,7 @@ experiments:
       - match_steps
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "bright_world_image_on_scanned_model"
     files:
@@ -527,6 +568,7 @@ experiments:
       - match_steps
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "hand_intrusion_world_image_on_scanned_model"
     files:
@@ -538,6 +580,7 @@ experiments:
       - match_steps
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "multi_object_world_image_on_scanned_model"
     files:
@@ -549,6 +592,7 @@ experiments:
       - match_steps
       - runtime
       - episode_runtime
+      - num_episodes
 
   - name: "infer_comp_lvl1_with_monolithic_models"
     files:
@@ -561,6 +605,7 @@ experiments:
       - rotation_error
       - prediction_error
       - runtime
+      - num_episodes
 
   - name: "infer_comp_lvl1_with_comp_models"
     files:
@@ -573,6 +618,7 @@ experiments:
       - rotation_error
       - prediction_error
       - runtime
+      - num_episodes
 
   - name: "infer_comp_lvl2_with_comp_models"
     files:
@@ -585,6 +631,7 @@ experiments:
       - rotation_error
       - prediction_error
       - runtime
+      - num_episodes
 
   - name: "infer_comp_lvl3_with_comp_models"
     files:
@@ -597,6 +644,7 @@ experiments:
       - rotation_error
       - prediction_error
       - runtime
+      - num_episodes
 
   - name: "infer_comp_lvl4_with_comp_models"
     files:
@@ -609,6 +657,7 @@ experiments:
       - rotation_error
       - prediction_error
       - runtime
+      - num_episodes
 
 # ---------------------------------------------------------------------------
 # Output options

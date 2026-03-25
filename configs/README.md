@@ -150,6 +150,7 @@ experiments:
       - rotation_error
       - runtime
       - episode_runtime
+      - num_episodes
 ```
 
 This will find the specified experiment name in the baseline and proposed csv files, apply the specified metrics (including transformations).
