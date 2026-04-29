@@ -591,19 +591,6 @@ experiments:
       - runtime
       - num_episodes
 
-  - name: "infer_comp_lvl4_with_comp_models"
-    files:
-      baseline: wandb_base
-      proposed: wandb_prop
-    metrics:
-      - percent_correct_compositional
-      - used_mlh
-      - match_steps
-      - rotation_error
-      - prediction_error
-      - runtime
-      - num_episodes
-
   - name: "infer_comp_lvl1_with_comp_models_and_resampling"
     files:
       baseline: wandb_base
