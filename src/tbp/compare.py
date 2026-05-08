@@ -392,18 +392,13 @@ def render_markdown_for_experiment(
     baseline_label: str = "Baseline",
     proposed_label: str = "Proposed",
 ) -> str:
-    headers = ["Metric", baseline_label, proposed_label]
+    headers = ["Experiment", "Metric", baseline_label, proposed_label]
     if show_deltas:
         headers.append("Δ")
-    if show_pass_fail:
-        headers.append("Result")
 
-    lines = [
-        f"### {exp_display_name}",
-        "",
-        "| " + " | ".join(headers) + " |",
-        "| " + " | ".join(["---"] * len(headers)) + " |",
-    ]
+    lines = []
+
+    first = True
 
     for key, ms in metric_specs.items():
         oname = ms.output_name
@@ -417,11 +412,15 @@ def render_markdown_for_experiment(
 
         sym = result_symbol(b, p, ms.higher_is_better, ms.tolerance, symbols)
 
-        row = [header, fmt_num(b, float_precision), fmt_num(p, float_precision)]
+        row = [
+            exp_display_name if first else "",
+            header,
+            fmt_num(b, float_precision),
+            fmt_num(p, float_precision),
+        ]
+        first = False
         if show_deltas:
             row.append(fmt_num(delta, float_precision))
-        if show_pass_fail:
-            row.append(sym)
         lines.append("| " + " | ".join(row) + " |")
 
     lines.append("")
@@ -444,7 +443,11 @@ def render_markdown(
         "pass_fail_symbols", {"pass": "✅", "better": "👍", "worse": "👎", "na": "—"}
     )
 
-    md_parts: List[str] = []
+    headers = ["Experiment", "Metric", baseline_label, proposed_label, "Change"]
+    md_parts: List[str] = [
+        "| " + " | ".join(headers) + " |\n",
+        "| " + " | ".join(["---"] * len(headers)) + " |\n",
+    ]
     for exp in cfg.get("experiments", []):
         name = exp["name"]
         base_key = exp["files"]["baseline"]
@@ -482,7 +485,7 @@ def render_markdown(
             )
         )
 
-    return "\n".join(md_parts).strip() + "\n"
+    return "".join(md_parts).strip() + "\n"
 
 
 # ============================== Plots (small bar plots) ==============================
